@@ -107,7 +107,7 @@ async def score_audio(file: UploadFile = File(...), sentence_id: str = Form(...)
     # So sánh
     similarity = difflib.SequenceMatcher(None, ref_text, transcription).ratio()
 
-    if similarity < 0.85:
+    if similarity < 0.65:
         return {
             "status": "error",
             "message": f"Bạn đọc sai câu.",
